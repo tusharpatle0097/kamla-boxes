@@ -52,13 +52,18 @@ const Navbar = () => {
                 </button>
 
                 {/* Navbar Links - Hidden on Mobile */}
-                <ul className="hidden lg:flex space-x-6">
+                <ul className="hidden lg:flex space-x-[50px]">
                     {links.map(link => (
                         <li key={link.name} className="cursor-pointer">
-                            <Link to={link.path} className="text-white hover:text-gray-300 font-semibold transition duration-200">
-                                {link.name}
-                            </Link>
-                        </li>
+                        <Link 
+                            to={link.path} 
+                            className="text-white hover:text-gray-300 font-semibold transition duration-200 relative group"
+                        >
+                            {link.name}
+                            <span className="absolute left-0 bottom-0 w-full h-[2px] bg-gray-300 scale-x-0 group-hover:scale-x-100 transition-all duration-300"></span>
+                        </Link>
+                    </li>
+                    
                     ))}
                 </ul>
             </div>

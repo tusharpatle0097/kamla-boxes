@@ -4,17 +4,12 @@ const Carousel = () => {
   const [slides] = useState([
     {
       imgSrc: 'https://www.smartpkg.in/subimages/about_us.jpg',
-    
     },
     {
       imgSrc: 'https://www.smartpkg.in/images/slide_1.jpg',
-    
     },
     {
       imgSrc: 'https://www.aopackmachine.com/wp-content/uploads/2022/08/Packaging-Box-Manufacturing-Business01.jpg',
-      // imgAlt: 'Vibrant abstract painting with swirling blue and purple hues on a canvas.',
-      // title: 'Full stack developers',
-      // description: 'Where "burnout" is just a fancy term for "Tuesday".',
     },
   ]);
 
@@ -55,16 +50,26 @@ const Carousel = () => {
               currentSlideIndex === index ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <div className="lg:px-32 lg:py-14 absolute inset-0 z-10 flex flex-col items-center justify-end gap-2 bg-gradient-to-t from-neutral-950/85 to-transparent px-16 py-12 text-center">
-              <h3 className="w-full lg:w-[80%] text-balance text-2xl lg:text-3xl font-bold text-white">
-                {slide.title}
-              </h3>
-              <p className="lg:w-1/2 w-full text-pretty text-sm text-neutral-300">{slide.description}</p>
+            {/* Central Text Overlay for Company Name */}
+            <div className="absolute inset-0 flex items-center justify-center z-10">
+            <h1
+  style={{
+    lineHeight: "1.5",
+    color: "#f0f0f0", // Light whitish color
+    textShadow: "2px 2px 10px rgba(0, 0, 0, 0.4)", // Soft shadow for depth
+  }}
+  className="text-4xl lg:text-[4.5rem] font-extrabold px-8 py-6 rounded-lg text-center shadow-lg tracking-wide transform transition-transform duration-300 hover:scale-105"
+>
+  KAMLA CORRUGATED <br /> BOX MANUFACTURING
+</h1>
+
+
+
             </div>
             <img
               className="absolute w-full h-full inset-0 object-cover text-neutral-600 dark:text-neutral-300"
               src={slide.imgSrc}
-              alt={slide.imgAlt}
+              alt=""
             />
           </div>
         ))}
@@ -104,6 +109,7 @@ const Carousel = () => {
 };
 
 export default Carousel;
+
 
 
 
