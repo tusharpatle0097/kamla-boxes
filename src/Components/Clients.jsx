@@ -25,37 +25,27 @@ const Clients = () => {
           </p>
         </div>
 
-        {/* Scrolling Client Logos */}
-        <div className="overflow-hidden py-6">
-          <div className="flex items-center space-x-8 animate-scroll">
-            {clients.concat(clients).map((client, index) => (
+        {/* Grid Layout for Client Logos */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {clients.map((client) => (
+            <div
+              key={client.id}
+              className="relative group flex items-center justify-center w-32 h-32 bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl"
+            >
               <img
-                key={`${client.id}-${index}`} // Unique key
                 src={client.logo}
                 alt={client.name}
-                className="w-24 h-16 object-contain"
+                className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-50"
               />
-            ))}
-          </div>
+              <div className="absolute inset-0 bg-gray-900 bg-opacity-0 flex items-center justify-center transition-opacity duration-300 group-hover:bg-opacity-50">
+                <span className="text-white text-sm font-semibold opacity-0 group-hover:opacity-100">
+                  {client.name}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-
-      {/* Animation for marquee effect */}
-      <style>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-scroll {
-          display: flex;
-          animation: scroll 30s linear infinite;
-          width: calc(200% + 16px); /* Ensure seamless scrolling */
-        }
-      `}</style>
     </section>
   );
 };
