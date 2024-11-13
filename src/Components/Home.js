@@ -9,6 +9,55 @@ import Monocartons from '../Assets/monocarton.png';
 import Fancy from '../Assets/fancyboxes.png';
 import Partitioned from '../Assets/boxPart.png';
 
+import amul from '../Assets/clients/amul.png';
+import apml from '../Assets/clients/apml.png';
+import aventis from '../Assets/clients/aventis.png';
+import balmer from '../Assets/clients/balmer-lawrie-logo.png';
+import bp from '../Assets/clients/bp.png';
+import BRITANNIA from '../Assets/clients/BRITANNIA.NS.png';
+import dinshaws from '../Assets/clients/dinshaws.png';
+import gopal from '../Assets/clients/gopal.png';
+import havmor from '../Assets/clients/havmor.jpeg';
+import heritage from '../Assets/clients/heritage.png';
+import hp from '../Assets/clients/hp.png';
+import ioc from '../Assets/clients/IOC.NS.png';
+import mescab from '../Assets/clients/mescab.png';
+import motherdairy from '../Assets/clients/motherdairy.png';
+import nubeno from '../Assets/clients/nubeno.png';
+import pagariya from '../Assets/clients/pagariya.jpg';
+import prabhat from '../Assets/clients/prabhat.png';
+import rollick from '../Assets/clients/Rollick Frozen Desserts Distributorship.png';
+import sumul from '../Assets/clients/sumul.png';
+import sury from '../Assets/clients/sury.png';
+import utex_industries_logo from '../Assets/clients/utex_industries_logo.jpg';
+import VADILALIND from '../Assets/clients/VADILALIND.NS.png';
+
+const clients = [
+  { id: 1, name: 'Client One', logo:amul  },
+  { id: 2, name: 'Client Two', logo:apml  },
+  { id: 3, name: 'Client Three', logo:aventis  },
+  { id: 4, name: 'Client Four', logo:balmer  },
+  { id: 5, name: 'Client Five', logo:bp  },
+  { id: 6, name: 'Client Six', logo:BRITANNIA  },
+  { id: 7, name: 'Client Seven', logo:  dinshaws},
+  { id: 8, name: 'Client Eight', logo:  gopal},
+  { id: 8, name: 'Client Eight', logo:  havmor},
+  { id: 8, name: 'Client Eight', logo:  heritage},
+  { id: 8, name: 'Client Eight', logo:  hp},
+  { id: 8, name: 'Client Eight', logo:  ioc},
+  { id: 8, name: 'Client Eight', logo:  mescab},
+  { id: 8, name: 'Client Eight', logo:  motherdairy},
+  { id: 8, name: 'Client Eight', logo:  nubeno},
+  { id: 8, name: 'Client Eight', logo:  pagariya},
+  { id: 8, name: 'Client Eight', logo:  prabhat},
+  { id: 8, name: 'Client Eight', logo:  rollick},
+  { id: 8, name: 'Client Eight', logo:  sumul},
+  { id: 8, name: 'Client Eight', logo: sury },
+  { id: 8, name: 'Client Eight', logo:  utex_industries_logo},
+  { id: 8, name: 'Client Eight', logo:  VADILALIND},
+];
+
+
 
 const products = [
     {
@@ -49,16 +98,7 @@ const products = [
     },
   ];
 
-  const clients = [
-    { id: 1, name: 'Client One', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVRoLY3SSqU0HpNAP_-uwfp98RSCrxFqk5Gw&s' },
-    { id: 2, name: 'Client Two', logo: 'https://c8.alamy.com/comp/TACMXH/three-red-rose-flower-buds-and-petals-from-a-vase-TACMXH.jpg' },
-    { id: 3, name: 'Client Three', logo: 'https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?cs=srgb&dl=pexels-pixabay-56866.jpg&fm=jpg' },
-    { id: 4, name: 'Client Four', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS58Lz3IlmiOohnNXMu8IN8U1RNDFxyWYBIxg&s' },
-    { id: 5, name: 'Client Five', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrBwARZpC1OVgQCHh9JbNmL52o4rWFjVwlEw&s' },
-    { id: 6, name: 'Client Six', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdpSupiI7Tw289HomG-whiYwnXcB15Gb0U0A&s' },
-    { id: 7, name: 'Client Seven', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqG3xvnBfia6BBSpZRqngW4DZgeUTBTmUwZQ&s' },
-    { id: 8, name: 'Client Eight', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPCnjtYHR-JqDzR0UHJduZ_pHI9LveRmtYug&s' },
-  ];
+
   
 
 const Home = () => {
@@ -275,7 +315,7 @@ const Home = () => {
                 key={`${client.id}-${index}`} // Unique key
                 src={client.logo}
                 alt={client.name}
-                className="w-24 h-16 object-contain"
+                className="w-35 h-16 object-contain"
               />
             ))}
           </div>
@@ -300,17 +340,15 @@ const Home = () => {
       `}</style>
     </section>
 
-    <section className="bg-gray-50 py-20 px-6 md:px-12 lg:px-24" id="contact">
+    {/* <section className="bg-gray-50 py-20 px-6 md:px-12 lg:px-24" id="contact">
       <div className="container mx-auto max-w-2xl bg-white p-10 rounded-2xl shadow-xl">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-6">Get in Touch</h2>
         <p className="text-center text-gray-600 mb-10">
           Have questions? Fill out the form below, and we’ll get back to you shortly.
         </p>
 
-        {/* Contact Form */}
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Name Input */}
             <div className="relative">
               <input
                 type="text"
@@ -330,7 +368,6 @@ const Home = () => {
               </label>
             </div>
 
-            {/* Email Input */}
             <div className="relative">
               <input
                 type="email"
@@ -351,7 +388,6 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Message Input */}
           <div className="relative">
             <textarea
               id="message"
@@ -371,7 +407,6 @@ const Home = () => {
             </label>
           </div>
 
-          {/* Submit Button */}
           <div className="text-center">
             <button
               type="submit"
@@ -382,7 +417,7 @@ const Home = () => {
           </div>
         </form>
       </div>
-    </section>
+    </section> */}
 
     <Footer/>
         </div>

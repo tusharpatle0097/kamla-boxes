@@ -1,48 +1,84 @@
-// src/components/Clients.js
-
 import React from 'react';
+import { motion } from 'framer-motion';
+
+import amul from '../Assets/clients/amul.png';
+import apml from '../Assets/clients/apml.png';
+import aventis from '../Assets/clients/aventis.png';
+import balmer from '../Assets/clients/balmer-lawrie-logo.png';
+import bp from '../Assets/clients/bp.png';
+import BRITANNIA from '../Assets/clients/BRITANNIA.NS.png';
+import dinshaws from '../Assets/clients/dinshaws.png';
+import gopal from '../Assets/clients/gopal.png';
+import havmor from '../Assets/clients/havmor.jpeg';
+import heritage from '../Assets/clients/heritage.png';
+import hp from '../Assets/clients/hp.png';
+import ioc from '../Assets/clients/IOC.NS.png';
+import mescab from '../Assets/clients/mescab.png';
+import motherdairy from '../Assets/clients/motherdairy.png';
+import nubeno from '../Assets/clients/nubeno.png';
+import pagariya from '../Assets/clients/pagariya.jpg';
+import prabhat from '../Assets/clients/prabhat.png';
+import rollick from '../Assets/clients/Rollick Frozen Desserts Distributorship.png';
+import sumul from '../Assets/clients/sumul.png';
+import sury from '../Assets/clients/sury.png';
+import utex_industries_logo from '../Assets/clients/utex_industries_logo.jpg';
+import VADILALIND from '../Assets/clients/VADILALIND.NS.png';
 
 const clients = [
-  { id: 1, name: 'Client One', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVRoLY3SSqU0HpNAP_-uwfp98RSCrxFqk5Gw&s' },
-  { id: 2, name: 'Client Two', logo: 'https://c8.alamy.com/comp/TACMXH/three-red-rose-flower-buds-and-petals-from-a-vase-TACMXH.jpg' },
-  { id: 3, name: 'Client Three', logo: 'https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?cs=srgb&dl=pexels-pixabay-56866.jpg&fm=jpg' },
-  { id: 4, name: 'Client Four', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS58Lz3IlmiOohnNXMu8IN8U1RNDFxyWYBIxg&s' },
-  { id: 5, name: 'Client Five', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrBwARZpC1OVgQCHh9JbNmL52o4rWFjVwlEw&s' },
-  { id: 6, name: 'Client Six', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdpSupiI7Tw289HomG-whiYwnXcB15Gb0U0A&s' },
-  { id: 7, name: 'Client Seven', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqG3xvnBfia6BBSpZRqngW4DZgeUTBTmUwZQ&s' },
-  { id: 8, name: 'Client Eight', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPCnjtYHR-JqDzR0UHJduZ_pHI9LveRmtYug&s' },
+  { id: 1, logo: amul },
+  { id: 2, logo: apml },
+  { id: 3, logo: aventis },
+  { id: 4, logo: balmer },
+  { id: 5, logo: bp },
+  { id: 6, logo: BRITANNIA },
+  { id: 7, logo: dinshaws },
+  { id: 8, logo: gopal },
+  { id: 9, logo: havmor },
+  { id: 10, logo: heritage },
+  { id: 11, logo: hp },
+  { id: 12, logo: ioc },
+  { id: 13, logo: mescab },
+  { id: 14, logo: motherdairy },
+  { id: 15, logo: nubeno },
+  { id: 16, logo: pagariya },
+  { id: 17, logo: prabhat },
+  { id: 18, logo: rollick },
+  { id: 19, logo: sumul },
+  { id: 20, logo: sury },
+  { id: 21, logo: utex_industries_logo },
+  { id: 22, logo: VADILALIND },
 ];
 
 const Clients = () => {
   return (
-    <section className="bg-gray-100 py-20 px-6 md:px-12 lg:px-24" id="clients">
+    <section className="bg-gray-50 py-20 px-6 md:px-12 lg:px-24" id="clients">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800">Our Clients</h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            We’re proud to have partnered with industry leaders and renowned brands to deliver exceptional packaging solutions.
+            A glimpse of the esteemed clients we work with.
           </p>
         </div>
 
-        {/* Grid Layout for Client Logos */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {/* Client Images Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {clients.map((client) => (
-            <div
+            <motion.div
               key={client.id}
-              className="relative group flex items-center justify-center w-32 h-32 bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl"
+              className="flex items-center justify-center bg-white rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg p-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
             >
+              {/* Client Image */}
               <img
                 src={client.logo}
-                alt={client.name}
-                className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-50"
+                alt={`Client ${client.id}`}
+                className="w-35 h-35 object-contain"
               />
-              <div className="absolute inset-0 bg-gray-900 bg-opacity-0 flex items-center justify-center transition-opacity duration-300 group-hover:bg-opacity-50">
-                <span className="text-white text-sm font-semibold opacity-0 group-hover:opacity-100">
-                  {client.name}
-                </span>
-              </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

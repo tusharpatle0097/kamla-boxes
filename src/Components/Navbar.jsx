@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../Assets/arihant logo.png'
+import logo from '../Assets/arihant logo.png';
 
 const Navbar = () => {
     // State for managing mobile menu visibility
@@ -23,11 +23,11 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="bg-slate-900 from-blue-500 to-purple-600 p-7 shadow-md">
+        <nav className="bg-slate-900 from-blue-500 to-purple-600 p-7 shadow-md fixed top-0 w-full z-50">
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo or Brand Name */}
-                <div className="text-white font-bold text-xl w">
-                    <img src={logo} alt=""  className='w-[200px] h-auto'/>
+                <div className="text-white font-bold text-xl">
+                    <img src={logo} alt="Logo" className="w-[200px] h-auto" />
                 </div>
 
                 {/* Hamburger Icon for Mobile Menu */}
@@ -55,15 +55,14 @@ const Navbar = () => {
                 <ul className="hidden lg:flex space-x-[50px]">
                     {links.map(link => (
                         <li key={link.name} className="cursor-pointer">
-                        <Link 
-                            to={link.path} 
-                            className="text-white hover:text-gray-300 font-semibold transition duration-200 relative group"
-                        >
-                            {link.name}
-                            <span className="absolute left-0 bottom-0 w-full h-[2px] bg-gray-300 scale-x-0 group-hover:scale-x-100 transition-all duration-300"></span>
-                        </Link>
-                    </li>
-                    
+                            <Link 
+                                to={link.path} 
+                                className="text-white hover:text-gray-300 font-semibold transition duration-200 relative group"
+                            >
+                                {link.name}
+                                <span className="absolute left-0 bottom-0 w-full h-[2px] bg-gray-300 scale-x-0 group-hover:scale-x-100 transition-all duration-300"></span>
+                            </Link>
+                        </li>
                     ))}
                 </ul>
             </div>

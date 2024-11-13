@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import S1 from '.././Assets/slides/S1.jpg'
+import S2 from '.././Assets/slides/S2.jpg'
+import S3 from '.././Assets/slides/S3.jpg'
+
 
 const Carousel = () => {
   const [slides] = useState([
     {
-      imgSrc: 'https://www.smartpkg.in/subimages/about_us.jpg',
+      imgSrc: S2,
     },
     {
-      imgSrc: 'https://www.smartpkg.in/images/slide_1.jpg',
+      imgSrc: S1,
     },
     {
-      imgSrc: 'https://www.aopackmachine.com/wp-content/uploads/2022/08/Packaging-Box-Manufacturing-Business01.jpg',
+      imgSrc: S3,
     },
   ]);
 
@@ -40,28 +44,27 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden mt-[6.3rem]">
       {/* Slides */}
       <div className="relative min-h-[80svh] w-full">
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              currentSlideIndex === index ? 'opacity-100' : 'opacity-0'
-            }`}
+            className={`absolute inset-0 transition-opacity duration-1000 ${currentSlideIndex === index ? 'opacity-100' : 'opacity-0'
+              }`} 
           >
             {/* Central Text Overlay for Company Name */}
             <div className="absolute inset-0 flex items-center justify-center z-10">
-            <h1
-  style={{
-    lineHeight: "1.5",
-    color: "#f0f0f0", // Light whitish color
-    textShadow: "2px 2px 10px rgba(0, 0, 0, 0.4)", // Soft shadow for depth
-  }}
-  className="text-4xl lg:text-[4.5rem] font-extrabold px-8 py-6 rounded-lg text-center shadow-lg tracking-wide transform transition-transform duration-300 hover:scale-105"
->
-  KAMLA CORRUGATED <br /> BOX MANUFACTURING
-</h1>
+              <h1
+                style={{
+                  lineHeight: "1.5",
+                  color: "#f0f0f0", // Light whitish color
+                  textShadow: "2px 2px 10px rgba(0, 0, 0, 0.4)", // Soft shadow for depth
+                }}
+                className="text-4xl lg:text-[4.5rem] font-extrabold px-8 py-6 rounded-lg text-center shadow-lg tracking-wide transform transition-transform duration-300 hover:scale-105"
+              >
+                KAMLA CORRUGATED <br /> BOX MANUFACTURING
+              </h1>
 
 
 

@@ -1,44 +1,48 @@
-// src/components/Products.js
-
 import React from 'react';
 import { motion } from 'framer-motion';
+import Corrugated from '../Assets/corbox.png';
+import Cartons from '../Assets/cartons.png';
+import Duplex from '../Assets/duplex.png';
+import Monocartons from '../Assets/monocarton.png';
+import Fancy from '../Assets/fancyboxes.png';
+import Partitioned from '../Assets/boxPart.png';
 
 const products = [
   {
     id: 1,
-    title: 'Eco-friendly Box',
+    title: 'Corrugated Boxes',
     description: 'A sustainable and durable packaging solution made from recycled materials.',
-    image: 'https://via.placeholder.com/600x400',
+    image: Corrugated,
   },
   {
     id: 2,
-    title: 'Custom Printed Box',
+    title: 'Cartons',
     description: 'High-quality printing with custom designs to showcase your brand.',
-    image: 'https://via.placeholder.com/600x400',
+    image: Cartons,
   },
   {
     id: 3,
-    title: 'Premium Gift Box',
+    title: 'Duplex Boxes',
     description: 'Luxurious and elegant packaging for high-end products and gifts.',
-    image: 'https://via.placeholder.com/600x400',
+    image: Duplex,
   },
   {
     id: 4,
-    title: 'Shipping Box',
+    title: 'Monocartons',
     description: 'Strong, corrugated boxes designed for secure shipping and handling.',
-    image: 'https://via.placeholder.com/600x400',
+    image: Monocartons,
   },
   {
     id: 5,
-    title: 'Storage Box',
+    title: 'Fancy Boxes',
     description: 'Robust storage boxes for organizing and protecting your items.',
-    image: 'https://via.placeholder.com/600x400',
+    image: Fancy,
   },
   {
     id: 6,
-    title: 'Subscription Box',
+    title: 'Partitioned Boxes',
     description: 'Customizable boxes perfect for subscription services and product sets.',
-    image: 'https://via.placeholder.com/600x400',
+    image: Partitioned,
   },
 ];
 
@@ -65,23 +69,18 @@ const Products = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              {/* Product Image */}
-              <img
-                src={product.image}
-                alt={product.title}
-                className="w-full h-64 object-cover"
-              />
+              {/* Centered Product Image */}
+              <div className="flex justify-center items-center h-64 bg-gray-100">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="object-contain h-full w-full p-4"
+                />
+              </div>
 
               {/* Product Info */}
               <div className="p-6 text-center">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.title}</h3>
-                <p className="text-gray-600 mb-4">{product.description}</p>
-                <a
-                  href="#"
-                  className="inline-block px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition duration-300"
-                >
-                  Learn More
-                </a>
               </div>
             </motion.div>
           ))}
