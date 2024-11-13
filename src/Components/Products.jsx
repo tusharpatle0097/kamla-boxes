@@ -48,7 +48,7 @@ const products = [
 
 const Products = () => {
   return (
-    <section className="bg-gray-50 py-20 px-6 md:px-12 lg:px-24" id="products">
+    <section className="bg-gray-50 py-20 px-6 md:px-12 lg:px-24 mt-[6.3rem]" id="products">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-12">

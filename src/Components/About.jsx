@@ -46,7 +46,7 @@ const AboutUs = () => {
 
   return (
     <>
-      <section className="bg-gray-50 pb-20">
+      <section className="bg-gray-50 pb-20 mt-[6.3rem]">
         {/* Hero Section */}
         <div className="relative bg-cover bg-center h-96 flex items-center justify-center text-center bg-[url('https://cdn.shopify.com/s/files/1/0070/7032/articles/how_20to_20measure_20a_20box_20for_20shipping.png?v=1727451497')]">
           <div className="bg-black bg-opacity-50 absolute inset-0"></div>

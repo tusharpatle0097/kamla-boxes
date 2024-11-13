@@ -16,7 +16,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-amber-100 to-teal-100 p-6">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-amber-100 to-teal-100 p-6 mt-[6.3rem]">
       {/* Contact Info Section */}
       <div className="max-w-4xl w-full bg-white shadow-2xl rounded-lg p-8 border border-gray-300 mb-12">
         <h2 className="text-4xl font-bold text-center text-teal-700 mb-10">Get in Touch</h2>
